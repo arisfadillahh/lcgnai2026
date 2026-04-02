@@ -1,0 +1,14 @@
+.test-backdrop {
+  backdrop-filter: blur(20px);
+}
+.test-webkit {
+  -webkit-backdrop-filter: blur(20px);
+}
+.test-both {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+.test-both-reverse {
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+}
