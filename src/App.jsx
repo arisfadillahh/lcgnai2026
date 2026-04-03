@@ -13,14 +13,16 @@ const faqData = {
         { q: "Online atau offline?", a: "Hybrid — workshop, opening, dan sebagian presentasi dilakukan online; festival dan final dilakukan offline." },
     ],
     jadwal: [
-        { q: "Apa saja rangkaian kegiatan dan jadwalnya?", a: null, list: [
-            "Workshop sesi 1: 25 April 2026, 09.00 WIB",
-            "Workshop sesi 2: 2 Mei 2026, 09.00 WIB",
-            "Workshop sesi 3 + Opening lomba: 9 Mei 2026, 09.00 WIB",
-            "Hackathon online: 9–13 Mei 2026",
-            "Batas pengumpulan game: 14 Mei 2026, pukul 17.00 WIB",
-            "Festival & final: 17 Mei 2026, pukul 10.00 WIB",
-        ]},
+        {
+            q: "Apa saja rangkaian kegiatan dan jadwalnya?", a: null, list: [
+                "Workshop sesi 1: 25 April 2026, 09.00 WIB",
+                "Workshop sesi 2: 2 Mei 2026, 09.00 WIB",
+                "Workshop sesi 3 + Opening lomba: 9 Mei 2026, 09.00 WIB",
+                "Hackathon online: 9–13 Mei 2026",
+                "Batas pengumpulan game: 14 Mei 2026, pukul 17.00 WIB",
+                "Festival & final: 17 Mei 2026, pukul 10.00 WIB",
+            ]
+        },
     ],
     teknis: [
         { q: "Tools apa yang digunakan?", a: "Antigravity (platform pembuatan game berbasis AI) dan tools pendukung lainnya." },
@@ -29,16 +31,20 @@ const faqData = {
         { q: "Apa saja kategori juara dan kriteria penilaian?", a: "Juara I, II, III per kategori, plus 1 Juara Favorit berdasarkan voting pengunjung pameran offline. Kriteria penilaian: orisinalitas, manfaat/kekuatan pesan anti-korupsi, kesenangan/gameplay, kualitas software, dan komposisi desain." },
     ],
     biaya: [
-        { q: "Berapa biaya pendaftaran?", a: null, list: [
-            "SMP / SMA / SMK: Rp 250.000 per tim",
-            "Guru: Rp 150.000 per tim",
-            "Workshop saja (tanpa lomba): Rp 150.000 per peserta",
-        ]},
-        { q: "Apakah ada promo untuk sekolah?", a: null, list: [
-            "Kirim 3 tim → gratis 1 tim guru (cukup bayar Rp 75.000)",
-            "Kirim 5 tim → diskon Rp 50.000/tim (total Rp 1.000.000) + gratis 1 tim guru (2 orang)",
-            "Kirim lebih dari 5 tim → diskon Rp 50.000/tim + gratis 1 tim guru (2 orang); tim guru berikutnya Rp 100.000/tim",
-        ]},
+        {
+            q: "Berapa biaya pendaftaran?", a: null, list: [
+                "SMP / SMA / SMK: Rp 250.000 per tim",
+                "Guru: Rp 150.000 per tim",
+                "Workshop saja (tanpa lomba): Rp 150.000 per peserta",
+            ]
+        },
+        {
+            q: "Apakah ada promo untuk sekolah?", a: null, list: [
+                "Kirim 3 tim → gratis 1 tim guru (cukup bayar Rp 75.000)",
+                "Kirim 5 tim → diskon Rp 50.000/tim (total Rp 1.000.000) + gratis 1 tim guru (2 orang)",
+                "Kirim lebih dari 5 tim → diskon Rp 50.000/tim + gratis 1 tim guru (2 orang); tim guru berikutnya Rp 100.000/tim",
+            ]
+        },
     ],
 };
 
@@ -152,7 +158,7 @@ function App() {
                     if (window.WOW) new window.WOW().init();
                 }, 400); // match transition speed
             };
-            
+
             // Force hide after 2.5 seconds
             const timer = setTimeout(hideLoader, 2500);
             return () => clearTimeout(timer);
@@ -236,7 +242,7 @@ function App() {
 
                 <section id="section-hero"
                     className="section-dark text-light pt-80 pb-0 jarallax relative overflow-hidden jarallax">
-                    <video src="images/background/bg.mp4" className="jarallax-img" autoPlay loop muted playsInline></video>
+                    <video src="images/background/bg - Copy.webm" className="jarallax-img" autoPlay loop muted playsInline></video>
                     <div className="gradient-edge-bottom h-10"></div>
                     <div className="sw-overlay op-5"></div>
 
@@ -582,10 +588,10 @@ function App() {
                             <div className="col-lg-4 col-md-6">
                                 <div className="bg-dark-2 p-4 rounded-3 hover relative overflow-hidden wow fadeIn scale-in-mask h-100" style={{ border: '1px solid rgba(255,255,255,0.05)' }}>
                                     <div className="d-flex align-items-center mb-3">
-                                         <div className="p-3 rounded-2 d-flex align-items-center justify-content-center" style={{ width: '50px', height: '50px', backgroundColor: 'rgba(163, 255, 0, 0.1)' }}>
-                                              <i className="fa fa-lightbulb" style={{ color: '#a3ff00', fontSize: '24px' }}></i>
-                                         </div>
-                                         <h4 className="mb-0 ms-3 text-white">Orisinal</h4>
+                                        <div className="p-3 rounded-2 d-flex align-items-center justify-content-center" style={{ width: '50px', height: '50px', backgroundColor: 'rgba(163, 255, 0, 0.1)' }}>
+                                            <i className="fa fa-lightbulb" style={{ color: '#a3ff00', fontSize: '24px' }}></i>
+                                        </div>
+                                        <h4 className="mb-0 ms-3 text-white">Orisinal</h4>
                                     </div>
                                     <p className="mb-0 text-white-op-7" style={{ fontSize: '14px', lineHeight: '1.6' }}>Seberapa orisinal software yang dibuat team peserta sendiri? Apakah mempunyai ciri khas, menghindari copy-paste, dan menghadirkan sesuatu yang baru.</p>
                                     <div className="absolute top-0 start-0 w-100 hover-bg-color" style={{ height: '3px', transition: '0.4s ease' }}></div>
@@ -595,10 +601,10 @@ function App() {
                             <div className="col-lg-4 col-md-6">
                                 <div className="bg-dark-2 p-4 rounded-3 hover relative overflow-hidden wow fadeIn scale-in-mask h-100" style={{ border: '1px solid rgba(255,255,255,0.05)' }} data-wow-delay=".1s">
                                     <div className="d-flex align-items-center mb-3">
-                                         <div className="p-3 rounded-2 d-flex align-items-center justify-content-center" style={{ width: '50px', height: '50px', backgroundColor: 'rgba(163, 255, 0, 0.1)' }}>
-                                              <i className="fa fa-hand-holding-heart" style={{ color: '#a3ff00', fontSize: '24px' }}></i>
-                                         </div>
-                                         <h4 className="mb-0 ms-3 text-white">Manfaat</h4>
+                                        <div className="p-3 rounded-2 d-flex align-items-center justify-content-center" style={{ width: '50px', height: '50px', backgroundColor: 'rgba(163, 255, 0, 0.1)' }}>
+                                            <i className="fa fa-hand-holding-heart" style={{ color: '#a3ff00', fontSize: '24px' }}></i>
+                                        </div>
+                                        <h4 className="mb-0 ms-3 text-white">Manfaat</h4>
                                     </div>
                                     <p className="mb-0 text-white-op-7" style={{ fontSize: '14px', lineHeight: '1.6' }}>Menilai seberapa kuat game dalam menyampaikan pesan anti-korupsi serta nilai integritas untuk memberikan dampak positif kepada pemain.</p>
                                     <div className="absolute top-0 start-0 w-100 hover-bg-color" style={{ height: '3px', transition: '0.4s ease' }}></div>
@@ -608,10 +614,10 @@ function App() {
                             <div className="col-lg-4 col-md-6">
                                 <div className="bg-dark-2 p-4 rounded-3 hover relative overflow-hidden wow fadeIn scale-in-mask h-100" style={{ border: '1px solid rgba(255,255,255,0.05)' }} data-wow-delay=".2s">
                                     <div className="d-flex align-items-center mb-3">
-                                         <div className="p-3 rounded-2 d-flex align-items-center justify-content-center" style={{ width: '50px', height: '50px', backgroundColor: 'rgba(163, 255, 0, 0.1)' }}>
-                                              <i className="fa fa-gamepad" style={{ color: '#a3ff00', fontSize: '24px' }}></i>
-                                         </div>
-                                         <h4 className="mb-0 ms-3 text-white">Menyenangkan</h4>
+                                        <div className="p-3 rounded-2 d-flex align-items-center justify-content-center" style={{ width: '50px', height: '50px', backgroundColor: 'rgba(163, 255, 0, 0.1)' }}>
+                                            <i className="fa fa-gamepad" style={{ color: '#a3ff00', fontSize: '24px' }}></i>
+                                        </div>
+                                        <h4 className="mb-0 ms-3 text-white">Menyenangkan</h4>
                                     </div>
                                     <p className="mb-0 text-white-op-7" style={{ fontSize: '14px', lineHeight: '1.6' }}>Berapa menyenangkan software game ini? Meliputi nilai hiburan, plot tantangan, konteks cerita, hingga karakter yang dikembangkan.</p>
                                     <div className="absolute top-0 start-0 w-100 hover-bg-color" style={{ height: '3px', transition: '0.4s ease' }}></div>
@@ -621,10 +627,10 @@ function App() {
                             <div className="col-lg-4 col-md-6">
                                 <div className="bg-dark-2 p-4 rounded-3 hover relative overflow-hidden wow fadeIn scale-in-mask h-100" style={{ border: '1px solid rgba(255,255,255,0.05)' }} data-wow-delay=".3s">
                                     <div className="d-flex align-items-center mb-3">
-                                         <div className="p-3 rounded-2 d-flex align-items-center justify-content-center" style={{ width: '50px', height: '50px', backgroundColor: 'rgba(163, 255, 0, 0.1)' }}>
-                                              <i className="fa fa-cogs" style={{ color: '#a3ff00', fontSize: '24px' }}></i>
-                                         </div>
-                                         <h4 className="mb-0 ms-3 text-white">Kualitas Operasi</h4>
+                                        <div className="p-3 rounded-2 d-flex align-items-center justify-content-center" style={{ width: '50px', height: '50px', backgroundColor: 'rgba(163, 255, 0, 0.1)' }}>
+                                            <i className="fa fa-cogs" style={{ color: '#a3ff00', fontSize: '24px' }}></i>
+                                        </div>
+                                        <h4 className="mb-0 ms-3 text-white">Kualitas Operasi</h4>
                                     </div>
                                     <p className="mb-0 text-white-op-7" style={{ fontSize: '14px', lineHeight: '1.6' }}>Sebaik apa software game ini berjalan? Seberapa halus animasinya? Apakah 100% selesai dan bebas dari error fatal?</p>
                                     <div className="absolute top-0 start-0 w-100 hover-bg-color" style={{ height: '3px', transition: '0.4s ease' }}></div>
@@ -634,10 +640,10 @@ function App() {
                             <div className="col-lg-4 col-md-6">
                                 <div className="bg-dark-2 p-4 rounded-3 hover relative overflow-hidden wow fadeIn scale-in-mask h-100" style={{ border: '1px solid rgba(255,255,255,0.05)' }} data-wow-delay=".4s">
                                     <div className="d-flex align-items-center mb-3">
-                                         <div className="p-3 rounded-2 d-flex align-items-center justify-content-center" style={{ width: '50px', height: '50px', backgroundColor: 'rgba(163, 255, 0, 0.1)' }}>
-                                              <i className="fa fa-palette" style={{ color: '#a3ff00', fontSize: '24px' }}></i>
-                                         </div>
-                                         <h4 className="mb-0 ms-3 text-white">Komposisi Design</h4>
+                                        <div className="p-3 rounded-2 d-flex align-items-center justify-content-center" style={{ width: '50px', height: '50px', backgroundColor: 'rgba(163, 255, 0, 0.1)' }}>
+                                            <i className="fa fa-palette" style={{ color: '#a3ff00', fontSize: '24px' }}></i>
+                                        </div>
+                                        <h4 className="mb-0 ms-3 text-white">Komposisi Design</h4>
                                     </div>
                                     <p className="mb-0 text-white-op-7" style={{ fontSize: '14px', lineHeight: '1.6' }}>Seberapa bagus perpaduan warna, bentuk, tulisan, gambar, hingga kualitas suara dari karya game yang dihasilkan.</p>
                                     <div className="absolute top-0 start-0 w-100 hover-bg-color" style={{ height: '3px', transition: '0.4s ease' }}></div>
@@ -651,16 +657,16 @@ function App() {
 
                 {/* section-prizepool */}
                 <section id="section-prizepool" className="bg-dark section-dark pt-80 pb-80 relative overflow-hidden coming-soon-blur" aria-label="section">
-                    
+
                     {/* Fixed Background Image Blurred (Using absolute div instead of img tag to prevent layout pushing) */}
-                    <div className="absolute w-100 h-100 start-0 top-0 z-0" style={{ 
-                        backgroundImage: 'url(images/background/8.webp)', 
-                        backgroundSize: 'cover', 
-                        backgroundPosition: 'center', 
-                        filter: 'blur(10px) brightness(0.5)', 
-                        transform: 'scale(1.1)' 
+                    <div className="absolute w-100 h-100 start-0 top-0 z-0" style={{
+                        backgroundImage: 'url(images/background/8.webp)',
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                        filter: 'blur(10px) brightness(0.5)',
+                        transform: 'scale(1.1)'
                     }}></div>
-                    
+
                     <div className="gradient-edge-top h-10 relative z-1"></div>
                     <div className="gradient-edge-bottom h-10 relative z-1"></div>
 
@@ -674,7 +680,7 @@ function App() {
                                 <h4 className="mb-5 wow fadeInUp fw-normal text-white-op-8" data-wow-delay=".3s">
                                     Ayo Berkompetisi dan Raih Total Penghargaan Senilai
                                 </h4>
-                                
+
                                 {/* Glassmorphism Box */}
                                 <div className="d-inline-block p-4 px-md-5 rounded-3 wow scale-in-mask relative overflow-hidden" data-wow-delay=".5s" style={{ border: '1px solid rgba(163,255,0,0.3)', boxShadow: '0 10px 40px rgba(163,255,0,0.15)', backdropFilter: 'blur(15px)', WebkitBackdropFilter: 'blur(15px)', backgroundColor: 'rgba(255,255,255,0.03)' }}>
                                     <div className="absolute w-100 top-0 start-0 hover-bg-color" style={{ height: '3px', backgroundColor: '#a3ff00' }}></div>
@@ -705,18 +711,18 @@ function App() {
                             </div>
                         </div>
                         <div className="row g-4 justify-content-center">
-                            
+
                             {/* SMP */}
                             <div className="col-lg-3 col-md-6">
                                 <div className="bg-dark-2 p-4 rounded-3 hover relative overflow-hidden wow fadeIn scale-in-mask h-100" style={{ border: '1px solid rgba(255,255,255,0.05)', boxShadow: '0 10px 30px rgba(0,0,0,0.2)' }}>
                                     <div className="d-flex align-items-center mb-4">
-                                         <div className="p-3 rounded-circle d-flex align-items-center justify-content-center" style={{ width: '60px', height: '60px', backgroundColor: 'rgba(163, 255, 0, 0.1)' }}>
-                                              <i className="fa fa-medal fs-3" style={{ color: '#a3ff00' }}></i>
-                                         </div>
-                                         <div className="ms-3 text-start">
-                                              <h5 className="mb-1 text-white-op-5 text-uppercase fw-bold" style={{ letterSpacing: '1px', fontSize: '11px' }}>Kategori</h5>
-                                              <h4 className="mb-0 text-white">SMP</h4>
-                                         </div>
+                                        <div className="p-3 rounded-circle d-flex align-items-center justify-content-center" style={{ width: '60px', height: '60px', backgroundColor: 'rgba(163, 255, 0, 0.1)' }}>
+                                            <i className="fa fa-medal fs-3" style={{ color: '#a3ff00' }}></i>
+                                        </div>
+                                        <div className="ms-3 text-start">
+                                            <h5 className="mb-1 text-white-op-5 text-uppercase fw-bold" style={{ letterSpacing: '1px', fontSize: '11px' }}>Kategori</h5>
+                                            <h4 className="mb-0 text-white">SMP</h4>
+                                        </div>
                                     </div>
                                     <div className="text-start ms-2">
                                         <div className="d-flex align-items-center mb-2">
@@ -740,13 +746,13 @@ function App() {
                             <div className="col-lg-3 col-md-6">
                                 <div className="bg-dark-2 p-4 rounded-3 hover relative overflow-hidden wow fadeIn scale-in-mask h-100" style={{ border: '1px solid rgba(255,255,255,0.05)', boxShadow: '0 10px 30px rgba(0,0,0,0.2)' }} data-wow-delay=".2s">
                                     <div className="d-flex align-items-center mb-4">
-                                         <div className="p-3 rounded-circle d-flex align-items-center justify-content-center" style={{ width: '60px', height: '60px', backgroundColor: 'rgba(163, 255, 0, 0.1)' }}>
-                                              <i className="fa fa-medal fs-3" style={{ color: '#a3ff00' }}></i>
-                                         </div>
-                                         <div className="ms-3 text-start">
-                                              <h5 className="mb-1 text-white-op-5 text-uppercase fw-bold" style={{ letterSpacing: '1px', fontSize: '11px' }}>Kategori</h5>
-                                              <h4 className="mb-0 text-white">SMA</h4>
-                                         </div>
+                                        <div className="p-3 rounded-circle d-flex align-items-center justify-content-center" style={{ width: '60px', height: '60px', backgroundColor: 'rgba(163, 255, 0, 0.1)' }}>
+                                            <i className="fa fa-medal fs-3" style={{ color: '#a3ff00' }}></i>
+                                        </div>
+                                        <div className="ms-3 text-start">
+                                            <h5 className="mb-1 text-white-op-5 text-uppercase fw-bold" style={{ letterSpacing: '1px', fontSize: '11px' }}>Kategori</h5>
+                                            <h4 className="mb-0 text-white">SMA</h4>
+                                        </div>
                                     </div>
                                     <div className="text-start ms-2">
                                         <div className="d-flex align-items-center mb-2">
@@ -770,13 +776,13 @@ function App() {
                             <div className="col-lg-3 col-md-6">
                                 <div className="bg-dark-2 p-4 rounded-3 hover relative overflow-hidden wow fadeIn scale-in-mask h-100" style={{ border: '1px solid rgba(255,255,255,0.05)', boxShadow: '0 10px 30px rgba(0,0,0,0.2)' }} data-wow-delay=".4s">
                                     <div className="d-flex align-items-center mb-4">
-                                         <div className="p-3 rounded-circle d-flex align-items-center justify-content-center" style={{ width: '60px', height: '60px', backgroundColor: 'rgba(163, 255, 0, 0.1)' }}>
-                                              <i className="fa fa-medal fs-3" style={{ color: '#a3ff00' }}></i>
-                                         </div>
-                                         <div className="ms-3 text-start">
-                                              <h5 className="mb-1 text-white-op-5 text-uppercase fw-bold" style={{ letterSpacing: '1px', fontSize: '11px' }}>Kategori</h5>
-                                              <h4 className="mb-0 text-white">SMK</h4>
-                                         </div>
+                                        <div className="p-3 rounded-circle d-flex align-items-center justify-content-center" style={{ width: '60px', height: '60px', backgroundColor: 'rgba(163, 255, 0, 0.1)' }}>
+                                            <i className="fa fa-medal fs-3" style={{ color: '#a3ff00' }}></i>
+                                        </div>
+                                        <div className="ms-3 text-start">
+                                            <h5 className="mb-1 text-white-op-5 text-uppercase fw-bold" style={{ letterSpacing: '1px', fontSize: '11px' }}>Kategori</h5>
+                                            <h4 className="mb-0 text-white">SMK</h4>
+                                        </div>
                                     </div>
                                     <div className="text-start ms-2">
                                         <div className="d-flex align-items-center mb-2">
@@ -800,13 +806,13 @@ function App() {
                             <div className="col-lg-3 col-md-6">
                                 <div className="bg-dark-2 p-4 rounded-3 hover relative overflow-hidden wow fadeIn scale-in-mask h-100" style={{ border: '1px solid rgba(255,255,255,0.05)', boxShadow: '0 10px 30px rgba(0,0,0,0.2)' }} data-wow-delay=".6s">
                                     <div className="d-flex align-items-center mb-4">
-                                         <div className="p-3 rounded-circle d-flex align-items-center justify-content-center" style={{ width: '60px', height: '60px', backgroundColor: 'rgba(163, 255, 0, 0.1)' }}>
-                                              <i className="fa fa-trophy fs-3" style={{ color: '#a3ff00' }}></i>
-                                         </div>
-                                         <div className="ms-3 text-start">
-                                              <h5 className="mb-1 text-white-op-5 text-uppercase fw-bold" style={{ letterSpacing: '1px', fontSize: '11px' }}>Kategori</h5>
-                                              <h4 className="mb-0 text-white">Guru</h4>
-                                         </div>
+                                        <div className="p-3 rounded-circle d-flex align-items-center justify-content-center" style={{ width: '60px', height: '60px', backgroundColor: 'rgba(163, 255, 0, 0.1)' }}>
+                                            <i className="fa fa-trophy fs-3" style={{ color: '#a3ff00' }}></i>
+                                        </div>
+                                        <div className="ms-3 text-start">
+                                            <h5 className="mb-1 text-white-op-5 text-uppercase fw-bold" style={{ letterSpacing: '1px', fontSize: '11px' }}>Kategori</h5>
+                                            <h4 className="mb-0 text-white">Guru</h4>
+                                        </div>
                                     </div>
                                     <div className="text-start ms-2">
                                         <div className="d-flex align-items-center mb-2">
@@ -825,21 +831,21 @@ function App() {
                                     <div className="absolute top-0 start-0 w-100 hover-bg-color" style={{ height: '3px', transition: '0.4s ease' }}></div>
                                 </div>
                             </div>
-                            
+
                             {/* Juara Favorit Full Width */}
                             <div className="col-lg-8 col-md-10 mt-4">
                                 <div className="bg-dark-2 p-4 rounded-3 hover relative overflow-hidden wow fadeIn scale-in-mask d-flex align-items-center justify-content-between" style={{ border: '1px solid rgba(255,193,7,0.2)', background: 'linear-gradient(90deg, rgba(30,30,35,1) 0%, rgba(50,40,10,0.8) 100%)', boxShadow: '0 10px 30px rgba(0,0,0,0.4)' }} data-wow-delay=".8s">
                                     <div className="text-start d-flex flex-column justify-content-center">
-                                         <h5 className="mb-2 text-warning text-uppercase fw-bold" style={{ letterSpacing: '1px', fontSize: '11px' }}>Penghargaan Spesial</h5>
-                                         <h2 className="mb-0 text-white wow scale-in-mask">1 Juara Favorit</h2>
+                                        <h5 className="mb-2 text-warning text-uppercase fw-bold" style={{ letterSpacing: '1px', fontSize: '11px' }}>Penghargaan Spesial</h5>
+                                        <h2 className="mb-0 text-white wow scale-in-mask">1 Juara Favorit</h2>
                                     </div>
                                     <div className="d-flex align-items-center">
-                                         <div className="d-none d-sm-block text-end me-4">
-                                            <span className="text-white-op-8 fs-14">Dipilih berdasarkan perolehan<br/>suara dan interaksi terbanyak</span>
-                                         </div>
-                                         <div className="p-2">
-                                              <i className="fa fa-star fa-3x text-warning wow pulse" data-wow-iteration="infinite" data-wow-duration="2s" style={{ filter: 'drop-shadow(0 0 15px rgba(255,193,7,0.5))' }}></i>
-                                         </div>
+                                        <div className="d-none d-sm-block text-end me-4">
+                                            <span className="text-white-op-8 fs-14">Dipilih berdasarkan perolehan<br />suara dan interaksi terbanyak</span>
+                                        </div>
+                                        <div className="p-2">
+                                            <i className="fa fa-star fa-3x text-warning wow pulse" data-wow-iteration="infinite" data-wow-duration="2s" style={{ filter: 'drop-shadow(0 0 15px rgba(255,193,7,0.5))' }}></i>
+                                        </div>
                                     </div>
                                     <div className="absolute top-0 start-0 h-100" style={{ width: '3px', backgroundColor: '#ffc107' }}></div>
                                 </div>
@@ -850,7 +856,7 @@ function App() {
                 </section>
 
 
-<section id="section-schedule" className="bg-dark section-dark text-light">
+                <section id="section-schedule" className="bg-dark section-dark text-light">
                     <div className="container">
                         <div className="row g-4 gx-5 justify-content-center">
                             <div className="col-lg-6 text-center">
@@ -968,7 +974,7 @@ function App() {
                     </div>
                 </section>
 
-<section id="section-venue" className="bg-dark section-dark text-light pt-80 relative jarallax"
+                <section id="section-venue" className="bg-dark section-dark text-light pt-80 relative jarallax"
                     aria-label="section">
                     <div className="container relative z-2">
                         <div className="row g-4 justify-content-center">
@@ -988,7 +994,7 @@ function App() {
                     </div>
                 </section>
 
-<section id="section-testimonials" className="bg-dark section-dark text-light border-white-top-op-2 pt-80 pb-80" aria-label="section">
+                <section id="section-testimonials" className="bg-dark section-dark text-light border-white-top-op-2 pt-80 pb-80" aria-label="section">
                     <div className="container">
                         <div className="row justify-content-center text-center mb-5">
                             <div className="col-lg-6">
@@ -1019,7 +1025,7 @@ function App() {
                     </div>
                 </section>
 
-<section id="section-tickets" className="bg-dark section-dark text-light pt-80 relative jarallax"
+                <section id="section-tickets" className="bg-dark section-dark text-light pt-80 relative jarallax"
                     aria-label="section">
                     <img src="images/background/7.webp" className="jarallax-img" alt="" />
                     <div className="gradient-edge-top"></div>
@@ -1101,8 +1107,8 @@ function App() {
                                 </div>
 
                                 {/* Promo Khusus Sekolah */}
-                                <div className="mt-5 p-4 p-md-5 rounded-4 wow fadeInUp" style={{ 
-                                    background: 'rgba(255, 255, 255, 0.03)', 
+                                <div className="mt-5 p-4 p-md-5 rounded-4 wow fadeInUp" style={{
+                                    background: 'rgba(255, 255, 255, 0.03)',
                                     border: '1px solid rgba(163, 255, 0, 0.2)',
                                     backdropFilter: 'blur(10px)',
                                     WebkitBackdropFilter: 'blur(10px)'
@@ -1135,6 +1141,22 @@ function App() {
                                                     </div>
                                                 </div>
                                             </div>
+                                            {/* Button Daftar Kolektif */}
+                                            <div className="mt-4">
+                                                <a
+                                                    href="https://wa.me/6281241243883?text=Halo,%20saya%20mau%20daftar%20kolektif"
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="btn-main fx-slide"
+                                                    data-hover="Hubungi via WhatsApp"
+                                                    style={{ display: 'block', width: '100%', textAlign: 'center', backgroundColor: '#a3ff00', color: '#000', padding: '16px', fontWeight: '800', borderRadius: '15px', boxShadow: '0 0 20px rgba(163,255,0,0.4)', border: '2px solid #bfff00', textTransform: 'uppercase', letterSpacing: '1px' }}
+                                                >
+                                                    <span>Daftar Kolektif Sekarang</span>
+                                                </a>
+                                                <div className="text-center mt-3">
+                                                    <span style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)', fontStyle: 'italic' }}>*Catatan: Pendaftaran kolektif dikoordinir dan ditangani oleh pihak sekolah masing-masing.</span>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -1143,7 +1165,7 @@ function App() {
                     </div>
                 </section>
 
-                      <section id="section-faq" className="bg-dark section-dark text-light">
+                <section id="section-faq" className="bg-dark section-dark text-light">
                     <div className="container">
                         <div className="row g-4 justify-content-center text-center mb-5">
                             <div className="col-lg-8">
