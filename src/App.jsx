@@ -1,8 +1,105 @@
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './App.css'; // You can remove this if unused
 import { FaMapMarkerAlt, FaQuoteLeft, FaPhone, FaEnvelope, FaFacebookF, FaInstagram, FaTwitter, FaYoutube, FaVideo } from 'react-icons/fa';
 import AIventChat from './components/AIventChat';
+
+// ─── FAQ DATA ────────────────────────────────────────────────────────────────
+const faqData = {
+    umum: [
+        { q: "Apa itu LCGN AI 2026?", a: "Program workshop dan kompetisi pembuatan game berbasis AI yang diselenggarakan oleh Clevio Innovator Camp, dengan tema Indonesia Tanpa Korupsi – The Game Makers Movement." },
+        { q: "Siapa saja yang bisa ikut?", a: "SMP, SMA, SMK, dan Guru." },
+        { q: "Apakah harus bisa coding dulu?", a: "Tidak perlu. Workshop di awal program dirancang sebagai bekal sebelum masuk ke tahap lomba dan hackathon." },
+        { q: "Online atau offline?", a: "Hybrid — workshop, opening, dan sebagian presentasi dilakukan online; festival dan final dilakukan offline." },
+    ],
+    jadwal: [
+        { q: "Apa saja rangkaian kegiatan dan jadwalnya?", a: null, list: [
+            "Workshop sesi 1: 25 April 2026, 09.00 WIB",
+            "Workshop sesi 2: 2 Mei 2026, 09.00 WIB",
+            "Workshop sesi 3 + Opening lomba: 9 Mei 2026, 09.00 WIB",
+            "Hackathon online: 9–13 Mei 2026",
+            "Batas pengumpulan game: 14 Mei 2026, pukul 17.00 WIB",
+            "Festival & final: 17 Mei 2026, pukul 10.00 WIB",
+        ]},
+    ],
+    teknis: [
+        { q: "Tools apa yang digunakan?", a: "Antigravity (platform pembuatan game berbasis AI) dan tools pendukung lainnya." },
+        { q: "Bagaimana sistem seleksi finalis?", a: "Dipilih 5 tim terbaik per kategori untuk maju ke tahap final dan presentasi." },
+        { q: "Apakah presentasi final harus offline?", a: "Tidak. Finalis bisa memilih presentasi offline atau online. Jika memilih online, slot pameran offline akan diberikan ke tim peringkat berikutnya di kategori yang sama." },
+        { q: "Apa saja kategori juara dan kriteria penilaian?", a: "Juara I, II, III per kategori, plus 1 Juara Favorit berdasarkan voting pengunjung pameran offline. Kriteria penilaian: orisinalitas, manfaat/kekuatan pesan anti-korupsi, kesenangan/gameplay, kualitas software, dan komposisi desain." },
+    ],
+    biaya: [
+        { q: "Berapa biaya pendaftaran?", a: null, list: [
+            "SMP / SMA / SMK: Rp 250.000 per tim",
+            "Guru: Rp 150.000 per tim",
+            "Workshop saja (tanpa lomba): Rp 150.000 per peserta",
+        ]},
+        { q: "Apakah ada promo untuk sekolah?", a: null, list: [
+            "Kirim 3 tim → gratis 1 tim guru (cukup bayar Rp 75.000)",
+            "Kirim 5 tim → diskon Rp 50.000/tim (total Rp 1.000.000) + gratis 1 tim guru (2 orang)",
+            "Kirim lebih dari 5 tim → diskon Rp 50.000/tim + gratis 1 tim guru (2 orang); tim guru berikutnya Rp 100.000/tim",
+        ]},
+    ],
+};
+
+const faqTabs = [
+    { key: 'umum', label: 'Umum', icon: 'fa-circle-question' },
+    { key: 'jadwal', label: 'Jadwal', icon: 'fa-calendar-days' },
+    { key: 'teknis', label: 'Teknis', icon: 'fa-cogs' },
+    { key: 'biaya', label: 'Biaya & Promo', icon: 'fa-tags' },
+];
+
+function FAQSection() {
+    const [activeTab, setActiveTab] = useState('umum');
+    const [openIdx, setOpenIdx] = useState(0);
+
+    const items = faqData[activeTab] || [];
+
+    const handleTabChange = (key) => {
+        setActiveTab(key);
+        setOpenIdx(0);
+    };
+
+    return (
+        <div className="lcgn-faq-wrapper wow fadeInUp">
+            {/* Tab buttons */}
+            <div className="lcgn-faq-tabs">
+                {faqTabs.map(tab => (
+                    <button
+                        key={tab.key}
+                        className={`lcgn-faq-tab-btn${activeTab === tab.key ? ' active' : ''}`}
+                        onClick={() => handleTabChange(tab.key)}
+                    >
+                        <i className={`fa ${tab.icon} me-2`}></i>
+                        {tab.label}
+                    </button>
+                ))}
+            </div>
+
+            {/* Accordion items */}
+            <div className="lcgn-faq-accordion">
+                {items.map((item, idx) => (
+                    <div key={idx} className={`lcgn-faq-item${openIdx === idx ? ' open' : ''}`}>
+                        <button className="lcgn-faq-question" onClick={() => setOpenIdx(openIdx === idx ? -1 : idx)}>
+                            <span>{item.q}</span>
+                            <i className={`fa ${openIdx === idx ? 'fa-chevron-up' : 'fa-chevron-down'}`}></i>
+                        </button>
+                        {openIdx === idx && (
+                            <div className="lcgn-faq-answer">
+                                {item.a && <p>{item.a}</p>}
+                                {item.list && (
+                                    <ul className="lcgn-faq-list">
+                                        {item.list.map((li, i) => <li key={i}>{li}</li>)}
+                                    </ul>
+                                )}
+                            </div>
+                        )}
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
+}
 
 function App() {
     const testimonialsData = [
@@ -171,26 +268,25 @@ function App() {
                     <div className="abs w-100 start-0 bottom-0 z-3">
                         <div className="container">
                             <div
-                                className="sm-hide border-white-op-3 p-40 py-4 rounded-1 bg-blur relative overflow-hidden wow fadeInUp">
+                                className="border-white-op-3 p-40 py-4 rounded-1 bg-blur relative overflow-hidden wow fadeInUp">
                                 <div className="gradient-edge-bottom color start-0 h-50 op-5"></div>
                                 <div className="row g-4 align-items-center relative z-2">
-                                    {/* Left: Daftar Segera */}
-                                    <div className="col-lg-3 text-start">
+                                    {/* Left: Daftar Segera - hidden on small mobile */}
+                                    <div className="col-lg-3 d-none d-md-block text-start">
                                         <h2 className="mb-0 fw-bold pb-2" style={{ lineHeight: '1.2' }}>Daftar Segera!</h2>
                                     </div>
 
                                     {/* Center: Countdown */}
-                                    <div className="col-lg-6 text-center">
+                                    <div className="col-12 col-lg-6 text-center">
                                         <div className="d-inline-block">
-                                            <h5 className="mb-2 text-uppercase op-6" style={{ letterSpacing: '2px', fontSize: '15px' }}>Workshop Dimulai Dalam</h5>
+                                            <h5 className="mb-2 text-uppercase op-6" style={{ letterSpacing: '2px', fontSize: '13px', position: 'relative', top: '-10px', marginBottom: '-10px' }}>Batas Waktu Pendaftaran</h5>
                                             <div id="defaultCountdown" className="d-flex justify-content-center custom-countdown"></div>
                                         </div>
                                     </div>
 
                                     {/* Right: Zoom Info */}
-                                    <div className="col-lg-3">
+                                    <div className="col-lg-3 d-none d-lg-block">
                                         <div className="d-flex align-items-center justify-content-lg-end">
-                                            {/* Icon with glow effect */}
                                             <FaVideo className="fs-60 id-color" style={{ filter: 'drop-shadow(0 0 15px rgba(31, 78, 233, 0.7))' }} />
                                             <div className="ms-3">
                                                 <h5 className="mb-0 text-start fw-bold" style={{ lineHeight: '1.2' }}>Online Via<br />Zoom Meeting</h5>
@@ -250,20 +346,24 @@ function App() {
                 </section>
 
                 {/* SECTION LOGOS / PARTNER - THEME-SYNCED PARALLAX VERSION */}
-                <section id="section-logos" className="bg-dark section-dark pt-100 pb-100 relative overflow-hidden jarallax" aria-label="section">
-                    <img src="images/background/1.webp" className="jarallax-img" alt="" style={{ filter: 'blur(3px) brightness(0.5)' }} />
+                <section id="section-logos" className="bg-dark section-dark pt-100 pb-100 relative overflow-hidden" aria-label="section" style={{
+                    backgroundImage: "url('images/background/1.webp')",
+                    backgroundAttachment: "fixed",
+                    backgroundPosition: "center",
+                    backgroundSize: "cover"
+                }}>
                     <div className="gradient-edge-top h-10"></div>
                     <div className="gradient-edge-bottom h-10"></div>
-                    <div className="sw-overlay op-5"></div>
+                    <div className="sw-overlay op-8 bg-dark" style={{ zIndex: 1, position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}></div>
 
                     <div className="container relative" style={{ zIndex: '10' }}>
                         <div className="row justify-content-center">
                             <div className="col-lg-10 text-center">
                                 <h5 className="wow fadeInUp text-uppercase mb-3" style={{ letterSpacing: '4px', color: '#a3ff00', fontSize: '12px' }}>Supported By</h5>
                                 <div className="spacer-10"></div>
-                                <div className="d-flex justify-content-center align-items-center gap-5 wow scale-in-mask" data-wow-delay=".2s">
-                                    <img src="images/logo-light/IMprove.png" alt="IMprove" className="img-fluid" style={{ maxHeight: '85px', width: 'auto', filter: 'drop-shadow(0 0 10px rgba(163,255,0,0.3))' }} />
-                                    <img src="images/logo-light/mal%20ciputra.png" alt="Mal Ciputra Cibubur" className="img-fluid" style={{ maxHeight: '70px', width: 'auto', filter: 'drop-shadow(0 0 10px rgba(163,255,0,0.3))' }} />
+                                <div className="d-flex justify-content-center align-items-center flex-wrap gap-5 wow scale-in-mask" data-wow-delay=".2s">
+                                    <img src="images/logo-light/IMprove.png" alt="IMprove" className="img-fluid" style={{ maxHeight: '120px', width: 'auto', filter: 'drop-shadow(0 0 10px rgba(163,255,0,0.3))' }} />
+                                    <img src="images/logo-light/mal%20ciputra.png" alt="Mal Ciputra Cibubur" className="img-fluid" style={{ maxHeight: '100px', width: 'auto', filter: 'drop-shadow(0 0 10px rgba(163,255,0,0.3))' }} />
                                 </div>
                             </div>
                         </div>
@@ -337,19 +437,19 @@ function App() {
                 <section className="section-dark p-0" aria-label="section">
                     <div className="bg-color text-light d-flex py-4 lh-1 rot-2">
                         <div className="de-marquee-list-1 wow fadeInLeft" data-wow-duration="3s">
-                            <span className="fs-60 mx-3">Berani, Jujur, Mandiri, Peduli, Adil, Disiplin, Kerja Keras, Tanggung Jawab, Sederhana, #BERJUMPADIKERTAS</span>
-                            <span className="fs-60 mx-3 op-2">/</span>
-                            <span className="fs-60 mx-3">Berani, Jujur, Mandiri, Peduli, Adil, Disiplin, Kerja Keras, Tanggung Jawab, Sederhana, #BERJUMPADIKERTAS</span>
-                            <span className="fs-60 mx-3 op-2">/</span>
+                            <span className="marquee-text mx-3">Berani, Jujur, Mandiri, Peduli, Adil, Disiplin, Kerja Keras, Tanggung Jawab, Sederhana, #BERJUMPADIKERTAS</span>
+                            <span className="marquee-text mx-3 op-2">/</span>
+                            <span className="marquee-text mx-3">Berani, Jujur, Mandiri, Peduli, Adil, Disiplin, Kerja Keras, Tanggung Jawab, Sederhana, #BERJUMPADIKERTAS</span>
+                            <span className="marquee-text mx-3 op-2">/</span>
                         </div>
                     </div>
 
                     <div className="bg-color-2 text-light d-flex py-4 lh-1 rot-min-1 mt-min-20">
                         <div className="de-marquee-list-2 wow fadeInRight" data-wow-duration="3s">
-                            <span className="fs-60 mx-3">Berani, Jujur, Mandiri, Peduli, Adil, Disiplin, Kerja Keras, Tanggung Jawab, Sederhana, #BERJUMPADIKERTAS</span>
-                            <span className="fs-60 mx-3 op-2">/</span>
-                            <span className="fs-60 mx-3">Berani, Jujur, Mandiri, Peduli, Adil, Disiplin, Kerja Keras, Tanggung Jawab, Sederhana, #BERJUMPADIKERTAS</span>
-                            <span className="fs-60 mx-3 op-2">/</span>
+                            <span className="marquee-text mx-3">Berani, Jujur, Mandiri, Peduli, Adil, Disiplin, Kerja Keras, Tanggung Jawab, Sederhana, #BERJUMPADIKERTAS</span>
+                            <span className="marquee-text mx-3 op-2">/</span>
+                            <span className="marquee-text mx-3">Berani, Jujur, Mandiri, Peduli, Adil, Disiplin, Kerja Keras, Tanggung Jawab, Sederhana, #BERJUMPADIKERTAS</span>
+                            <span className="marquee-text mx-3 op-2">/</span>
                         </div>
                     </div>
                 </section>
@@ -375,7 +475,7 @@ function App() {
                     </div>
                 </section>
 
-                <section id="section-speakers" className="bg-dark section-dark text-light coming-soon-blur">
+                <section id="section-speakers" className="bg-dark section-dark text-light">
                     <div className="container">
                         <div className="row g-4 justify-content-center">
                             <div className="col-lg-6 relative z-3">
@@ -389,34 +489,19 @@ function App() {
                         </div>
 
                         <div className="row g-4 justify-content-center">
-                            <div className="col-lg-4">
+                            <div className="col-lg-4 col-md-6">
                                 <div className="hover relative rounded-1 overflow-hidden wow fadeIn scale-in-mask">
-                                    <img src="images/team/1.webp" className="w-100 hover-scale-1-1" alt="" />
+                                    <img src="images/team/Arya.jpeg" className="w-100 hover-scale-1-1" style={{ height: '450px', objectFit: 'cover', objectPosition: 'center 10%' }} alt="Arya Adhi - Coach Clevio" />
                                     <div className="abs w-100 h-100 start-0 top-0 hover-op-1 radial-gradient-color"></div>
                                     <div className="abs w-100 start-0 bottom-0 z-3">
-                                        <div className="bg-blur p-4 m-4 rounded-1 text-light text-center relative z-2">
-                                            <h3 className="mb-0">Arya Perdana</h3>
-                                            <span>Mentor Excel Kemenkeu</span>
+                                        <div className="bg-blur px-3 py-2 mx-3 mb-3 rounded-1 text-light text-center relative z-2">
+                                            <h4 className="mb-0" style={{ fontSize: '17px' }}>Arya Adhi</h4>
+                                            <span style={{ fontSize: '13px', opacity: '0.85' }}>Coach Clevio</span>
                                         </div>
                                         <div className="gradient-edge-bottom h-100 op-8"></div>
                                     </div>
                                 </div>
                             </div>
-
-                            <div className="col-lg-4">
-                                <div className="hover relative rounded-1 overflow-hidden wow fadeIn scale-in-mask">
-                                    <img src="images/team/1.webp" className="w-100 hover-scale-1-1" alt="" />
-                                    <div className="abs w-100 h-100 start-0 top-0 hover-op-1 radial-gradient-color"></div>
-                                    <div className="abs w-100 start-0 bottom-0 z-3">
-                                        <div className="bg-blur p-4 m-4 rounded-1 text-light text-center relative z-2">
-                                            <h3 className="mb-0">Arya Perdana</h3>
-                                            <span>VP of Machine Learning, Google</span>
-                                        </div>
-                                        <div className="gradient-edge-bottom h-100 op-8"></div>
-                                    </div>
-                                </div>
-                            </div>
-
                         </div>
                     </div>
                 </section>
@@ -1058,73 +1143,18 @@ function App() {
                     </div>
                 </section>
 
-                
-
-                <section id="section-faq" className="bg-dark section-dark text-light coming-soon-blur">
+                      <section id="section-faq" className="bg-dark section-dark text-light">
                     <div className="container">
-                        <div className="row g-4">
-                            <div className="col-lg-5">
-                                <div className="subtitle wow fadeInUp" data-wow-delay=".0s">Everything You Need to Know</div>
+                        <div className="row g-4 justify-content-center text-center mb-5">
+                            <div className="col-lg-8">
+                                <div className="subtitle wow fadeInUp" data-wow-delay=".0s">Semua yang Perlu Kamu Tahu</div>
                                 <h2 className="wow fadeInUp" data-wow-delay=".2s">Frequently Asked Questions</h2>
-                            </div>
-
-                            <div className="col-lg-7">
-                                <div className="accordion s2 wow fadeInUp">
-                                    <div className="accordion-section">
-                                        <div className="accordion-section-title" data-tab="#accordion-a1">
-                                            What is the AI Summit 2026?
-                                        </div>
-                                        <div className="accordion-section-content" id="accordion-a1">
-                                            The AI Summit 2026 is a premier event gathering leading AI experts, thought leaders,
-                                            and innovators. It features keynotes, workshops, panels, and networking
-                                            opportunities focusing on the latest advancements in artificial intelligence.
-                                        </div>
-
-                                        <div className="accordion-section-title" data-tab="#accordion-a2">
-                                            When and where will the event be held?
-                                        </div>
-                                        <div className="accordion-section-content" id="accordion-a2">
-                                            The AI Summit 2026 will take place from **[Event Dates]** at **[Event Location]**.
-                                            More details about the venue and directions will be provided closer to the event.
-                                        </div>
-
-                                        <div className="accordion-section-title" data-tab="#accordion-a3">
-                                            How can I register for the event?
-                                        </div>
-                                        <div className="accordion-section-content" id="accordion-a3">
-                                            You can register for the AI Summit 2026 through our official website. Simply choose
-                                            your ticket type and fill out the registration form.
-                                        </div>
-
-                                        <div className="accordion-section-title" data-tab="#accordion-a4">
-                                            What ticket options are available?
-                                        </div>
-                                        <div className="accordion-section-content" id="accordion-a4">
-                                            We offer a range of ticket options, including Standard, VIP, Full Access Pass,
-                                            Student, and Virtual tickets. You can find more details about each ticket type on
-                                            our [Tickets Page](#).
-                                        </div>
-
-                                        <div className="accordion-section-title" data-tab="#accordion-a5">
-                                            Can I transfer my ticket to someone else?
-                                        </div>
-                                        <div className="accordion-section-content" id="accordion-a5">
-                                            Tickets are non-transferable. If you are unable to attend, please contact our
-                                            support team for assistance.
-                                        </div>
-
-                                        <div className="accordion-section-title" data-tab="#accordion-a6">
-                                            Will there be virtual participation?
-                                        </div>
-                                        <div className="accordion-section-content" id="accordion-a6">
-                                            Yes! For those who can’t attend in person, we offer a **Virtual Ticket**. This
-                                            provides access to live-streamed sessions, workshops, and networking opportunities
-                                            online.
-                                        </div>
-                                    </div>
-                                </div>
+                                <p className="lead wow fadeInUp">Pertanyaan umum seputar LCGN AI 2026.</p>
                             </div>
                         </div>
+
+                        {/* FAQ Tabs */}
+                        <FAQSection />
                     </div>
                 </section>
 
@@ -1144,7 +1174,7 @@ function App() {
                             </div>
                         </div>
 
-                        <div className="row justify-content-center">
+                        <div className="row justify-content-center mt-4">
                             <div className="col-auto mb-3 wow fadeInUp" data-wow-delay=".6s">
                                 <a href="https://wa.me/6281212860444" target="_blank" rel="noopener noreferrer" className="btn-main fx-slide btn-premium-glow" data-hover="Hubungi Tim Clevio">
                                     <span>Hubungi Tim Clevio</span>
