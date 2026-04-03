@@ -25,3 +25,5 @@ dist-ssr
 
 public/game/
 public/games/
+
+public/chat-proxy.php
