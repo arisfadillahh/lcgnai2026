@@ -57,13 +57,22 @@ const faqTabs = [
 
 function FAQSection() {
     const [activeTab, setActiveTab] = useState('umum');
+    const [displayTab, setDisplayTab] = useState('umum');
     const [openIdx, setOpenIdx] = useState(0);
+    const [isExiting, setIsExiting] = useState(false);
 
-    const items = faqData[activeTab] || [];
+    const items = faqData[displayTab] || [];
 
     const handleTabChange = (key) => {
+        if (key === activeTab || isExiting) return;
         setActiveTab(key);
-        setOpenIdx(0);
+        setIsExiting(true);
+        // Beri waktu cukup agar animasi exit selesai tanpa terpotong
+        setTimeout(() => {
+            setDisplayTab(key);
+            setOpenIdx(0);
+            setIsExiting(false);
+        }, 450); 
     };
 
     return (
@@ -85,21 +94,31 @@ function FAQSection() {
             {/* Accordion items */}
             <div className="lcgn-faq-accordion">
                 {items.map((item, idx) => (
-                    <div key={idx} className={`lcgn-faq-item${openIdx === idx ? ' open' : ''}`}>
+                    <div 
+                        key={`${displayTab}-${idx}`} 
+                        className={`lcgn-faq-item ${openIdx === idx ? 'open' : ''} ${isExiting ? 'exit' : 'enter'}`}
+                        style={{ 
+                            animationDelay: isExiting 
+                                ? `${idx * 0.05}s` 
+                                : `${idx * 0.08}s` 
+                        }}
+                    >
                         <button className="lcgn-faq-question" onClick={() => setOpenIdx(openIdx === idx ? -1 : idx)}>
                             <span>{item.q}</span>
                             <i className={`fa ${openIdx === idx ? 'fa-chevron-up' : 'fa-chevron-down'}`}></i>
                         </button>
-                        {openIdx === idx && (
-                            <div className="lcgn-faq-answer">
-                                {item.a && <p>{item.a}</p>}
-                                {item.list && (
-                                    <ul className="lcgn-faq-list">
-                                        {item.list.map((li, i) => <li key={i}>{li}</li>)}
-                                    </ul>
-                                )}
+                        <div className="lcgn-faq-answer-wrapper">
+                            <div className="lcgn-faq-answer-inner">
+                                <div className="lcgn-faq-answer">
+                                    {item.a && <p>{item.a}</p>}
+                                    {item.list && (
+                                        <ul className="lcgn-faq-list">
+                                            {item.list.map((li, i) => <li key={i}>{li}</li>)}
+                                        </ul>
+                                    )}
+                                </div>
                             </div>
-                        )}
+                        </div>
                     </div>
                 ))}
             </div>

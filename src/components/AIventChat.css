@@ -269,6 +269,17 @@
 .aivent-chat-content p:first-child { margin-top: 0 !important; }
 .aivent-chat-content p:last-child { margin-bottom: 0 !important; }
 
+.aivent-chat-content a {
+    text-decoration: underline !important;
+    font-weight: 700 !important;
+}
+.assistant .aivent-chat-content a {
+    color: #a3ff00 !important;
+}
+.user .aivent-chat-content a {
+    color: #0c102a !important;
+}
+
 .aivent-chat-content strong {
     font-weight: 800 !important;
 }
