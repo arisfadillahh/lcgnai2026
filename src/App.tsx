@@ -431,7 +431,7 @@ function App() {
                     </div>
                 </section>
 
-                <section id="section-juri" className="bg-dark section-dark text-light border-white-top-op-2 pt-80 pb-60 coming-soon-blur">
+                <section id="section-juri" className="bg-dark section-dark text-light border-white-top-op-2 pt-80 pb-60">
                     <div className="container">
                         <div className="row justify-content-center text-center mb-5">
                             <div className="col-lg-6">
@@ -449,43 +449,13 @@ function App() {
                                     <div className="absolute w-100 top-0 start-0" style={{ height: '100px', backgroundColor: '#a3ff00' }}>
                                     </div>
 
-                                    <img src="images/team/1.webp" className="rounded-circle mb-3 relative z-2"
+                                    <img src="images/juri1.png" className="rounded-circle mb-3 relative z-2"
                                         style={{ width: '120px', height: '120px', objectFit: 'cover', border: '4px solid #1a1a2e' }}
                                         alt="Calvin Mona Sandehang" />
 
                                     <h3 className="mb-1">Calvin Mona Sandehang</h3>
                                     <span className="d-block text-white" style={{ fontSize: '14px' }}>Program Manager AGI, Game
                                         Programmer Level Up Agate</span>
-                                </div>
-                            </div>
-                            {/*  Juri 2  */}
-                            <div className="col-lg-4 col-md-6">
-                                <div className="hover relative rounded-1 overflow-hidden wow fadeIn scale-in-mask bg-dark border-white-op-2 text-center pt-5 pb-4 px-3"
-                                    data-wow-delay=".4s">
-                                    <div className="absolute w-100 top-0 start-0" style={{ height: '100px', backgroundColor: '#a3ff00' }}>
-                                    </div>
-
-                                    <img src="images/team/2.webp" className="rounded-circle mb-3 relative z-2"
-                                        style={{ width: '120px', height: '120px', objectFit: 'cover', border: '4px solid #1a1a2e' }}
-                                        alt="Bintang Ekananda" />
-
-                                    <h3 className="mb-1">Bintang Ekananda</h3>
-                                    <span className="d-block text-white" style={{ fontSize: '14px' }}>Co-founder/CEO alner.id</span>
-                                </div>
-                            </div>
-                            {/*  Juri 3  */}
-                            <div className="col-lg-4 col-md-6">
-                                <div className="hover relative rounded-1 overflow-hidden wow fadeIn scale-in-mask bg-dark border-white-op-2 text-center pt-5 pb-4 px-3"
-                                    data-wow-delay=".6s">
-                                    <div className="absolute w-100 top-0 start-0" style={{ height: '100px', backgroundColor: '#a3ff00' }}>
-                                    </div>
-
-                                    <img src="images/team/3.webp" className="rounded-circle mb-3 relative z-2"
-                                        style={{ width: '120px', height: '120px', objectFit: 'cover', border: '4px solid #1a1a2e' }}
-                                        alt="Luat Sihombing" />
-
-                                    <h3 className="mb-1">Luat Sihombing</h3>
-                                    <span className="d-block text-white" style={{ fontSize: '14px' }}>Direktur Gim</span>
                                 </div>
                             </div>
                         </div>
