@@ -254,6 +254,8 @@ function App() {
                                 <div className="d-flex justify-content-center align-items-center gap-5 wow scale-in-mask" data-wow-delay=".2s">
                                     <img src="images/logo-light/IMprove.png" alt="IMprove" className="img-fluid" style={{ maxHeight: '85px', width: 'auto', filter: 'drop-shadow(0 0 10px rgba(163,255,0,0.3))' }} />
                                     <img src="images/logo-light/mal%20ciputra.png" alt="Mal Ciputra Cibubur" className="img-fluid" style={{ maxHeight: '70px', width: 'auto', filter: 'drop-shadow(0 0 10px rgba(163,255,0,0.3))' }} />
+                                    <img src="images/agi.png" alt="AGI" className="img-fluid" style={{ maxHeight: '70px', width: 'auto', filter: 'brightness(0) invert(1) drop-shadow(0 0 10px rgba(255,255,255,0.3))' }} />
+                                    <img src="images/ekraf.png" alt="Ekraf" className="img-fluid" style={{ maxHeight: '70px', width: 'auto', filter: 'brightness(0) invert(1) drop-shadow(0 0 10px rgba(255,255,255,0.3))' }} />
                                 </div>
                             </div>
                         </div>
@@ -441,23 +443,78 @@ function App() {
                             </div>
                         </div>
                         <div className="row g-4 justify-content-center">
+
                             {/*  Juri 1  */}
-                            <div className="col-lg-4 col-md-6">
-                                <div className="hover relative rounded-1 overflow-hidden wow fadeIn scale-in-mask bg-dark border-white-op-2 text-center pt-5 pb-4 px-3"
-                                    data-wow-delay=".2s">
-                                    {/*  Green accent top  */}
-                                    <div className="absolute w-100 top-0 start-0" style={{ height: '100px', backgroundColor: '#a3ff00' }}>
+                            <div className="col-lg-4 col-md-6 d-flex">
+                                <div className="wow fadeIn scale-in-mask d-flex flex-column align-items-center text-center w-100 h-100"
+                                    data-wow-delay=".2s"
+                                    style={{
+                                        background: 'linear-gradient(160deg, rgba(163,255,0,0.07) 0%, rgba(255,255,255,0.03) 100%)',
+                                        border: '1px solid rgba(163,255,0,0.2)',
+                                        borderRadius: '16px',
+                                        padding: '40px 28px 32px',
+                                        boxShadow: '0 8px 32px rgba(0,0,0,0.3)',
+                                        backdropFilter: 'blur(8px)',
+                                        position: 'relative',
+                                        overflow: 'hidden'
+                                    }}>
+                                    <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '3px', background: 'linear-gradient(90deg, transparent, #a3ff00, transparent)' }}></div>
+                                    <div style={{ position: 'relative', marginBottom: '20px' }}>
+                                        <div style={{
+                                            width: '130px', height: '130px',
+                                            borderRadius: '50%',
+                                            background: 'linear-gradient(135deg, #a3ff00, #00c853)',
+                                            padding: '3px',
+                                            boxShadow: '0 0 25px rgba(163,255,0,0.4)'
+                                        }}>
+                                            <img src="images/juri1.png"
+                                                style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', borderRadius: '50%', display: 'block' }}
+                                                alt="Calvin Mona Sandehang" />
+                                        </div>
                                     </div>
-
-                                    <img src="images/juri1.png" className="rounded-circle mb-3 relative z-2"
-                                        style={{ width: '120px', height: '120px', objectFit: 'cover', border: '4px solid #1a1a2e' }}
-                                        alt="Calvin Mona Sandehang" />
-
-                                    <h3 className="mb-1">Calvin Mona Sandehang</h3>
-                                    <span className="d-block text-white" style={{ fontSize: '14px' }}>Program Manager AGI, Game
-                                        Programmer Level Up Agate</span>
+                                    <h4 className="mb-1 text-white fw-bold" style={{ fontSize: '18px' }}>Calvin Mona Sandehang</h4>
+                                    <span style={{ fontSize: '13px', color: '#a3ff00', fontWeight: '600', letterSpacing: '0.5px', display: 'block', marginBottom: '8px', lineHeight: '1.4' }}>
+                                        Program Manager AGI <br />
+                                        & Game Programmer Level Up Agate
+                                    </span>
+                                    <span style={{ fontSize: '13px', color: 'rgba(255,255,255,0.6)' }}>Asosiasi Game Indonesia (AGI)</span>
                                 </div>
                             </div>
+
+                            {/*  Juri 2  */}
+                            <div className="col-lg-4 col-md-6 d-flex">
+                                <div className="wow fadeIn scale-in-mask d-flex flex-column align-items-center text-center w-100 h-100"
+                                    data-wow-delay=".3s"
+                                    style={{
+                                        background: 'linear-gradient(160deg, rgba(163,255,0,0.07) 0%, rgba(255,255,255,0.03) 100%)',
+                                        border: '1px solid rgba(163,255,0,0.2)',
+                                        borderRadius: '16px',
+                                        padding: '40px 28px 32px',
+                                        boxShadow: '0 8px 32px rgba(0,0,0,0.3)',
+                                        backdropFilter: 'blur(8px)',
+                                        position: 'relative',
+                                        overflow: 'hidden'
+                                    }}>
+                                    <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '3px', background: 'linear-gradient(90deg, transparent, #a3ff00, transparent)' }}></div>
+                                    <div style={{ position: 'relative', marginBottom: '20px' }}>
+                                        <div style={{
+                                            width: '130px', height: '130px',
+                                            borderRadius: '50%',
+                                            background: 'linear-gradient(135deg, #a3ff00, #00c853)',
+                                            padding: '3px',
+                                            boxShadow: '0 0 25px rgba(163,255,0,0.4)'
+                                        }}>
+                                            <img src="images/juri3.png"
+                                                style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', borderRadius: '50%', display: 'block' }}
+                                                alt="Luat Sihombing" />
+                                        </div>
+                                    </div>
+                                    <h4 className="mb-1 text-white fw-bold" style={{ fontSize: '18px' }}>Luat Sihombing</h4>
+                                    <span style={{ fontSize: '13px', color: '#a3ff00', fontWeight: '600', letterSpacing: '0.5px', display: 'block', marginBottom: '8px' }}>Direktur Gim</span>
+                                    <span style={{ fontSize: '13px', color: 'rgba(255,255,255,0.6)' }}>Kementerian Ekraf RI</span>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </section>
@@ -566,23 +623,19 @@ function App() {
                                     <span className="id-color">LOMBA CIPTA GAME NASIONAL</span><br />
                                     Powered By AI
                                 </h2>
-                                <h4 className="mb-5 wow fadeInUp fw-normal text-white-op-8" data-wow-delay=".3s">
-                                    Ayo Berkompetisi dan Raih Total Penghargaan Senilai
+                                <h4 className="mb-4 wow fadeInUp fw-normal text-white-op-8" data-wow-delay=".3s">
+                                    Ayo raih total penghargaan senilai
                                 </h4>
 
                                 {/* Glassmorphism Box */}
                                 <div className="d-inline-block p-4 px-md-5 rounded-3 wow scale-in-mask relative overflow-hidden" data-wow-delay=".5s" style={{ border: '1px solid rgba(163,255,0,0.3)', boxShadow: '0 10px 40px rgba(163,255,0,0.15)', backdropFilter: 'blur(15px)', WebkitBackdropFilter: 'blur(15px)', backgroundColor: 'rgba(255,255,255,0.03)' }}>
                                     <div className="absolute w-100 top-0 start-0 hover-bg-color" style={{ height: '3px', backgroundColor: '#a3ff00' }}></div>
-                                    <div className="d-flex align-items-center justify-content-center gap-3">
-                                        <h1 className="mb-0 text-white" style={{ fontWeight: '800', fontSize: 'clamp(40px, 5vw, 65px)', lineHeight: '1' }}>Rp</h1>
-                                        <div className="de_count">
-                                            <h1 className="mb-0" style={{ color: '#a3ff00', fontWeight: '900', fontSize: 'clamp(50px, 6vw, 80px)', lineHeight: '1', textShadow: '0 0 30px rgba(163,255,0,0.6)' }}>
-                                                <span className="timer" data-to="21" data-speed="2500">0</span>
-                                            </h1>
-                                        </div>
-                                        <h1 className="mb-0 text-white" style={{ fontWeight: '800', fontSize: 'clamp(40px, 5vw, 65px)', lineHeight: '1' }}>Juta<span className="id-color">+</span></h1>
-                                    </div>
-                                    <p className="mt-3 mb-0 text-white-op-7 fw-bold text-uppercase fs-12" style={{ letterSpacing: '2px' }}>Total Prizepool LCGNAI 2026</p>
+                                    <h1 className="mb-2" style={{ color: '#a3ff00', fontWeight: '900', fontSize: 'clamp(44px, 6vw, 82px)', lineHeight: '1', textShadow: '0 0 30px rgba(163,255,0,0.6)' }}>
+                                        Rp 34.000.000
+                                    </h1>
+                                    <p className="mb-0 text-white-op-7 fs-14" style={{ letterSpacing: '0.5px' }}>
+                                        bagi para pemenang dan sekolah
+                                    </p>
                                 </div>
                             </div>
                         </div>

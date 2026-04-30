@@ -25,7 +25,7 @@ const faqData = {
         },
     ],
     teknis: [
-        { q: "Tools apa yang digunakan?", a: "Antigravity (platform pembuatan game berbasis AI) dan tools pendukung lainnya." },
+        { q: "Tools apa yang digunakan?", a: "To Be Confirm - salah satu platform AI Coding Assistant (Asisten Pemrograman AI) atau AI-Powered Code Editor (Editor Kode Berbasis AI)" },
         { q: "Bagaimana sistem seleksi finalis?", a: "Dipilih 5 tim terbaik per kategori untuk maju ke tahap final dan presentasi." },
         { q: "Apakah presentasi final harus offline?", a: "Tidak. Finalis bisa memilih presentasi offline atau online. Jika memilih online, slot pameran offline akan diberikan ke tim peringkat berikutnya di kategori yang sama." },
         { q: "Apa saja kategori juara dan kriteria penilaian?", a: "Juara I, II, III per kategori, plus 1 Juara Favorit berdasarkan voting pengunjung pameran offline. Kriteria penilaian: orisinalitas, manfaat/kekuatan pesan anti-korupsi, kesenangan/gameplay, kualitas software, dan komposisi desain." },
@@ -162,7 +162,7 @@ function App() {
             window.jarallax(document.querySelectorAll('.jarallax'), { speed: 0.2 });
         }
         if (window.$ && window.$('#defaultCountdown').length) {
-            window.$('#defaultCountdown').countdown({ until: new Date(2026, 4 - 1, 25, 9) });
+            window.$('#defaultCountdown').countdown({ until: new Date(2026, 5 - 1, 17, 9) });
         }
 
         // --- SAFETY LOADER HIDE (for Production & Mobile) ---
@@ -304,7 +304,7 @@ function App() {
                                     {/* Center: Countdown */}
                                     <div className="col-12 col-lg-6 text-center">
                                         <div className="d-inline-block">
-                                            <h5 className="mb-2 text-uppercase op-6" style={{ letterSpacing: '2px', fontSize: '13px', position: 'relative', top: '-10px', marginBottom: '-10px' }}>Batas Waktu Pendaftaran</h5>
+                                            <h5 className="mb-2 text-uppercase op-6" style={{ letterSpacing: '2px', fontSize: '13px', position: 'relative', top: '-10px', marginBottom: '-10px' }}>Menuju Puncak Festival</h5>
                                             <div id="defaultCountdown" className="d-flex justify-content-center custom-countdown"></div>
                                         </div>
                                     </div>
@@ -389,6 +389,8 @@ function App() {
                                 <div className="d-flex justify-content-center align-items-center flex-wrap gap-5 wow scale-in-mask" data-wow-delay=".2s">
                                     <img src="images/logo-light/IMprove.png" alt="IMprove" className="img-fluid" style={{ maxHeight: '120px', width: 'auto', filter: 'drop-shadow(0 0 10px rgba(163,255,0,0.3))' }} />
                                     <img src="images/logo-light/mal%20ciputra.png" alt="Mal Ciputra Cibubur" className="img-fluid" style={{ maxHeight: '100px', width: 'auto', filter: 'drop-shadow(0 0 10px rgba(163,255,0,0.3))' }} />
+                                    <img src="images/agi.png" alt="AGI" className="img-fluid" style={{ maxHeight: '100px', width: 'auto', filter: 'brightness(0) invert(1) drop-shadow(0 0 10px rgba(255,255,255,0.3))' }} />
+                                    <img src="images/ekraf.png" alt="Ekraf" className="img-fluid" style={{ maxHeight: '100px', width: 'auto', filter: 'brightness(0) invert(1) drop-shadow(0 0 10px rgba(255,255,255,0.3))' }} />
                                 </div>
                             </div>
                         </div>
@@ -527,37 +529,198 @@ function App() {
                                     </div>
                                 </div>
                             </div>
+
+                            {/* Narasumber 2 */}
+                            <div className="col-lg-4 col-md-6">
+                                <div className="hover relative rounded-1 overflow-hidden wow fadeIn scale-in-mask" data-wow-delay=".2s">
+                                    <img src="images/narsum2.png" className="w-100 hover-scale-1-1" style={{ height: '450px', objectFit: 'cover', objectPosition: 'center top' }} alt="M. Sahlan Ramadhan" />
+                                    <div className="abs w-100 h-100 start-0 top-0 hover-op-1 radial-gradient-color"></div>
+                                    <div className="abs w-100 start-0 bottom-0 z-3">
+                                        <div className="bg-blur px-3 py-2 mx-3 mb-3 rounded-1 text-light text-center relative z-2">
+                                            <h4 className="mb-0" style={{ fontSize: '17px' }}>M. Sahlan Ramadhan</h4>
+                                            <span style={{ fontSize: '13px', opacity: '0.85', display: 'block', lineHeight: '1.4' }}>
+                                                Pembina Yayasan Pagi Berdaya (Improve Foundation)<br />
+                                                dan Penyuluh Antikorupsi Utama
+                                            </span>
+                                        </div>
+                                        <div className="gradient-edge-bottom h-100 op-8"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
 
-                <section id="section-juri" className="bg-dark section-dark text-light border-white-top-op-2 pt-80 pb-60">
-                    <div className="container">
+                <section id="section-juri" className="bg-dark section-dark text-light border-white-top-op-2 pt-80 pb-60" style={{ position: 'relative', overflow: 'hidden' }}>
+
+                    {/* Subtle grid bg decoration */}
+                    <div style={{
+                        position: 'absolute', inset: 0, zIndex: 0,
+                        backgroundImage: 'linear-gradient(rgba(163,255,0,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(163,255,0,0.03) 1px, transparent 1px)',
+                        backgroundSize: '60px 60px'
+                    }}></div>
+
+                    <div className="container" style={{ position: 'relative', zIndex: 1 }}>
                         <div className="row justify-content-center text-center mb-5">
                             <div className="col-lg-6">
+                                <div className="subtitle wow fadeInUp" data-wow-delay=".0s">Tim Juri</div>
                                 <h2 className="wow fadeInUp" data-wow-delay=".1s">Tim Juri LCGN</h2>
-                                <p className="lead wow fadeInUp">Diadili oleh para pakar industri game dan inovasi digital tingkat
-                                    nasional.</p>
+                                <p className="lead wow fadeInUp">Diadili oleh para pakar industri game dan inovasi digital tingkat nasional.</p>
                             </div>
                         </div>
+
                         <div className="row g-4 justify-content-center">
-                            {/*  Juri 1  */}
-                            <div className="col-lg-4 col-md-6">
-                                <div className="hover relative rounded-1 overflow-hidden wow fadeIn scale-in-mask bg-dark border-white-op-2 text-center pt-5 pb-4 px-3"
-                                    data-wow-delay=".2s">
-                                    {/*  Green accent top  */}
-                                    <div className="absolute w-100 top-0 start-0" style={{ height: '100px', backgroundColor: '#a3ff00' }}>
+
+                            {/* Juri 1 - Centered Card */}
+                            <div className="col-lg-4 col-md-6 d-flex wow fadeInUp" data-wow-delay=".2s">
+                                <div style={{
+                                    display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center',
+                                    width: '100%',
+                                    background: 'linear-gradient(160deg, rgba(163,255,0,0.06) 0%, rgba(10,10,20,0.85) 100%)',
+                                    border: '1px solid rgba(163,255,0,0.2)',
+                                    borderRadius: '20px',
+                                    padding: '40px 28px 32px',
+                                    boxShadow: '0 4px 24px rgba(0,0,0,0.4)',
+                                    backdropFilter: 'blur(12px)',
+                                    position: 'relative',
+                                    overflow: 'hidden',
+                                    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                                    cursor: 'pointer'
+                                }}
+                                    onMouseEnter={e => {
+                                        e.currentTarget.style.transform = 'translateY(-6px)';
+                                        e.currentTarget.style.boxShadow = '0 16px 48px rgba(163,255,0,0.18)';
+                                    }}
+                                    onMouseLeave={e => {
+                                        e.currentTarget.style.transform = 'translateY(0)';
+                                        e.currentTarget.style.boxShadow = '0 4px 24px rgba(0,0,0,0.4)';
+                                    }}>
+                                    {/* Top lime accent */}
+                                    <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '3px', background: 'linear-gradient(90deg, transparent, #a3ff00, transparent)' }}></div>
+
+                                    {/* Photo */}
+                                    <div style={{ marginBottom: '20px' }}>
+                                        <div style={{
+                                            width: '120px', height: '120px',
+                                            borderRadius: '50%',
+                                            background: 'linear-gradient(135deg, #a3ff00, #00c853)',
+                                            padding: '3px',
+                                            boxShadow: '0 0 30px rgba(163,255,0,0.4)'
+                                        }}>
+                                            <img src="images/juri1.png"
+                                                style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', borderRadius: '50%', display: 'block' }}
+                                                alt="Calvin Mona Sandehang" />
+                                        </div>
                                     </div>
 
-                                    <img src="images/juri1.png" className="rounded-circle mb-3 relative z-2"
-                                        style={{ width: '120px', height: '120px', objectFit: 'cover', objectPosition: 'top', border: '4px solid #1a1a2e' }}
-                                        alt="Calvin Mona Sandehang" />
-
-                                    <h3 className="mb-1">Calvin Mona Sandehang</h3>
-                                    <span className="d-block text-white" style={{ fontSize: '14px' }}>Program Manager AGI, Game
-                                        Programmer Level Up Agate</span>
+                                    <h4 style={{ fontSize: '18px', fontWeight: '700', color: '#fff', marginBottom: '6px' }}>Calvin Mona Sandehang</h4>
+                                    <span style={{ display: 'block', fontSize: '13px', color: '#a3ff00', fontWeight: '600', marginBottom: '8px', letterSpacing: '0.4px', lineHeight: '1.4' }}>
+                                        Program Manager AGI <br />
+                                        & Game Programmer Level Up Agate
+                                    </span>
+                                    <span style={{ display: 'block', fontSize: '12px', color: 'rgba(255,255,255,0.55)', lineHeight: '1.6' }}>Asosiasi Game Indonesia (AGI)</span>
                                 </div>
                             </div>
+
+                            {/* Juri 2 - Centered Card */}
+                            <div className="col-lg-4 col-md-6 d-flex wow fadeInUp" data-wow-delay=".35s">
+                                <div style={{
+                                    display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center',
+                                    width: '100%',
+                                    background: 'linear-gradient(160deg, rgba(163,255,0,0.06) 0%, rgba(10,10,20,0.85) 100%)',
+                                    border: '1px solid rgba(163,255,0,0.2)',
+                                    borderRadius: '20px',
+                                    padding: '40px 28px 32px',
+                                    boxShadow: '0 4px 24px rgba(0,0,0,0.4)',
+                                    backdropFilter: 'blur(12px)',
+                                    position: 'relative',
+                                    overflow: 'hidden',
+                                    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                                    cursor: 'pointer'
+                                }}
+                                    onMouseEnter={e => {
+                                        e.currentTarget.style.transform = 'translateY(-6px)';
+                                        e.currentTarget.style.boxShadow = '0 16px 48px rgba(163,255,0,0.18)';
+                                    }}
+                                    onMouseLeave={e => {
+                                        e.currentTarget.style.transform = 'translateY(0)';
+                                        e.currentTarget.style.boxShadow = '0 4px 24px rgba(0,0,0,0.4)';
+                                    }}>
+                                    {/* Top lime accent */}
+                                    <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '3px', background: 'linear-gradient(90deg, transparent, #a3ff00, transparent)' }}></div>
+
+                                    {/* Photo */}
+                                    <div style={{ marginBottom: '20px' }}>
+                                        <div style={{
+                                            width: '120px', height: '120px',
+                                            borderRadius: '50%',
+                                            background: 'linear-gradient(135deg, #a3ff00, #00c853)',
+                                            padding: '3px',
+                                            boxShadow: '0 0 30px rgba(163,255,0,0.4)'
+                                        }}>
+                                            <img src="images/juri3.png"
+                                                style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', borderRadius: '50%', display: 'block' }}
+                                                alt="Luat Sihombing" />
+                                        </div>
+                                    </div>
+
+                                    <h4 style={{ fontSize: '18px', fontWeight: '700', color: '#fff', marginBottom: '6px' }}>Luat Sihombing</h4>
+                                    <span style={{ display: 'block', fontSize: '13px', color: '#a3ff00', fontWeight: '600', marginBottom: '8px', letterSpacing: '0.4px' }}>Direktur Gim</span>
+                                    <span style={{ display: 'block', fontSize: '12px', color: 'rgba(255,255,255,0.55)', lineHeight: '1.6' }}>Kementerian Ekraf RI</span>
+                                </div>
+                            </div>
+
+                            {/* Juri 3 - Centered Card */}
+                            <div className="col-lg-4 col-md-6 d-flex wow fadeInUp" data-wow-delay=".5s">
+                                <div style={{
+                                    display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center',
+                                    width: '100%',
+                                    background: 'linear-gradient(160deg, rgba(163,255,0,0.06) 0%, rgba(10,10,20,0.85) 100%)',
+                                    border: '1px solid rgba(163,255,0,0.2)',
+                                    borderRadius: '20px',
+                                    padding: '40px 28px 32px',
+                                    boxShadow: '0 4px 24px rgba(0,0,0,0.4)',
+                                    backdropFilter: 'blur(12px)',
+                                    position: 'relative',
+                                    overflow: 'hidden',
+                                    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                                    cursor: 'pointer'
+                                }}
+                                    onMouseEnter={e => {
+                                        e.currentTarget.style.transform = 'translateY(-6px)';
+                                        e.currentTarget.style.boxShadow = '0 16px 48px rgba(163,255,0,0.18)';
+                                    }}
+                                    onMouseLeave={e => {
+                                        e.currentTarget.style.transform = 'translateY(0)';
+                                        e.currentTarget.style.boxShadow = '0 4px 24px rgba(0,0,0,0.4)';
+                                    }}>
+                                    {/* Top lime accent */}
+                                    <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '3px', background: 'linear-gradient(90deg, transparent, #a3ff00, transparent)' }}></div>
+
+                                    {/* Photo */}
+                                    <div style={{ marginBottom: '20px' }}>
+                                        <div style={{
+                                            width: '120px', height: '120px',
+                                            borderRadius: '50%',
+                                            background: 'linear-gradient(135deg, #a3ff00, #00c853)',
+                                            padding: '3px',
+                                            boxShadow: '0 0 30px rgba(163,255,0,0.4)'
+                                        }}>
+                                            <img src="images/juri2.png"
+                                                style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', borderRadius: '50%', display: 'block' }}
+                                                alt="Luthfia Zein Pettarani" />
+                                        </div>
+                                    </div>
+
+                                    <h4 style={{ fontSize: '18px', fontWeight: '700', color: '#fff', marginBottom: '6px' }}>Luthfia Zein Pettarani</h4>
+                                    <span style={{ display: 'block', fontSize: '13px', color: '#a3ff00', fontWeight: '600', marginBottom: '8px', letterSpacing: '0.4px', lineHeight: '1.4' }}>
+                                        Ketua Yayasan Pagi Berdaya <br />
+                                        & Penyuluh Antikorupsi Madya
+                                    </span>
+                                    <span style={{ display: 'block', fontSize: '12px', color: 'rgba(255,255,255,0.55)', lineHeight: '1.6' }}>Improve Foundation</span>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </section>
@@ -645,7 +808,7 @@ function App() {
 
 
                 {/* section-prizepool */}
-                <section id="section-prizepool" className="bg-dark section-dark pt-80 pb-80 relative overflow-hidden coming-soon-blur" aria-label="section">
+                <section id="section-prizepool" className="bg-dark section-dark pt-80 pb-80 relative overflow-hidden" aria-label="section">
 
                     {/* Fixed Background Image Blurred (Using absolute div instead of img tag to prevent layout pushing) */}
                     <div className="absolute w-100 h-100 start-0 top-0 z-0" style={{
@@ -661,28 +824,23 @@ function App() {
 
                     <div className="container relative z-4">
                         <div className="row justify-content-center text-center">
-                            <div className="col-lg-8">
+                            <div className="col-lg-10">
                                 <h2 className="fs-40 wow fadeInUp text-uppercase mb-2" data-wow-delay=".1s" style={{ letterSpacing: '2px' }}>
                                     <span className="id-color">LOMBA CIPTA GAME NASIONAL</span><br />
                                     Powered By AI
                                 </h2>
-                                <h4 className="mb-5 wow fadeInUp fw-normal text-white-op-8" data-wow-delay=".3s">
-                                    Ayo Berkompetisi dan Raih Total Penghargaan Senilai
+                                <h4 className="mb-4 wow fadeInUp fw-normal text-white-op-8" data-wow-delay=".3s">
+                                    Ayo raih total penghargaan senilai
                                 </h4>
 
-                                {/* Glassmorphism Box */}
                                 <div className="d-inline-block p-4 px-md-5 rounded-3 wow scale-in-mask relative overflow-hidden" data-wow-delay=".5s" style={{ border: '1px solid rgba(163,255,0,0.3)', boxShadow: '0 10px 40px rgba(163,255,0,0.15)', backdropFilter: 'blur(15px)', WebkitBackdropFilter: 'blur(15px)', backgroundColor: 'rgba(255,255,255,0.03)' }}>
                                     <div className="absolute w-100 top-0 start-0 hover-bg-color" style={{ height: '3px', backgroundColor: '#a3ff00' }}></div>
-                                    <div className="d-flex align-items-center justify-content-center gap-3">
-                                        <h1 className="mb-0 text-white" style={{ fontWeight: '800', fontSize: 'clamp(40px, 5vw, 65px)', lineHeight: '1' }}>Rp</h1>
-                                        <div className="de_count">
-                                            <h1 className="mb-0" style={{ color: '#a3ff00', fontWeight: '900', fontSize: 'clamp(50px, 6vw, 80px)', lineHeight: '1', textShadow: '0 0 30px rgba(163,255,0,0.6)' }}>
-                                                <span className="timer" data-to="21" data-speed="2500">0</span>
-                                            </h1>
-                                        </div>
-                                        <h1 className="mb-0 text-white" style={{ fontWeight: '800', fontSize: 'clamp(40px, 5vw, 65px)', lineHeight: '1' }}>Juta<span className="id-color">+</span></h1>
-                                    </div>
-                                    <p className="mt-3 mb-0 text-white-op-7 fw-bold text-uppercase fs-12" style={{ letterSpacing: '2px' }}>Total Prizepool LCGNAI 2026</p>
+                                    <h1 className="mb-2" style={{ color: '#a3ff00', fontWeight: '900', fontSize: 'clamp(44px, 6vw, 82px)', lineHeight: '1', textShadow: '0 0 30px rgba(163,255,0,0.6)' }}>
+                                        Rp 34.000.000
+                                    </h1>
+                                    <p className="mb-0 text-white-op-7 fs-14" style={{ letterSpacing: '0.5px' }}>
+                                        bagi para pemenang dan sekolah
+                                    </p>
                                 </div>
                             </div>
                         </div>
